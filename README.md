@@ -1,9 +1,13 @@
+![Alternatif Metin](images/intro.png)
+
+![Alternatif Metin](images/ai_works.png)
 
 # 🚀 Research Assistant Crew (Local AI Powered)
 
 This project is an autonomous AI research assistant that researches any topic specified by the user online, verifies the data obtained (fact-checking), and presents the results as a detailed report in both **Markdown (.md)** and **PDF (.pdf)** formats.
 
 It is developed entirely using **CrewAI** infrastructure and local **Ollama** models. This allows for in-depth research without external API costs, while protecting data privacy.
+
 
 ## ✨ Solution Offered
 
@@ -13,6 +17,9 @@ In traditional research, gathering information, verifying the accuracy of source
 3. Extracts up-to-date data from the internet using **DuckDuckGo** and **Web Scraping** tools.
 4. Filters out potential hallucinations and misinformation from the collected data. 5. It first creates a `report.md` file by citing the relevant sources (citations), and then automatically converts it to a `report.pdf` file.
 
+![Alternatif Metin](images/report_pdf.png)
+
+
 ## 🤖 Our Crew (Agents)
 
 The system works by 5 different AI agents with specific roles collaborating sequentially:
@@ -20,7 +27,7 @@ The system works by 5 different AI agents with specific roles collaborating sequ
 * **🧠 Research Planner:** Analyzes the user's query, breaks it down into subheadings, and creates a roadmap with clear, specific goals for the research team.
 * **🔎 Internet Researcher:** Conducts in-depth searches using search engine tools (DuckDuckGo) on the internet according to the plan. Identifies the most up-to-date and reliable sources.
 * **🛡️ Fact Checker:** Cross-checks the raw data provided by the researcher. It identifies inconsistencies, misinformation, or hallucinations, ensuring the quality of the report. * **📝 Reporting Analyst:** It takes verified data, synthesizes the information, and writes a well-structured, fluent Markdown (`report.md`) report that also includes citations.
-* **📄 File Converter:** It comes into play in the final step, reads the written Markdown report, and converts it into a presentation-ready `report.pdf` file for the user.
+* **📄 File Converter:** It comes into play in the final step, reads the written Markdown report, and converts it into a presentation-ready `report.pdf` file for the user. (Custom tool usage)
 
 ## 🛠️ Setup and Usage (How-to Guide)
 ### Prerequisites
