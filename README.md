@@ -1,6 +1,39 @@
-# ResearchAssistant Crew
 
-Welcome to the ResearchAssistant Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+# 🚀 Research Assistant Crew (Local AI Powered)
+
+This project is an autonomous AI research assistant that researches any topic specified by the user online, verifies the data obtained (fact-checking), and presents the results as a detailed report in both **Markdown (.md)** and **PDF (.pdf)** formats.
+
+It is developed entirely using **CrewAI** infrastructure and local **Ollama** models. This allows for in-depth research without external API costs, while protecting data privacy.
+
+## ✨ Solution Offered
+
+In traditional research, gathering information, verifying the accuracy of sources, and transforming this into a proper report can take hours. This system:
+1. Dynamically receives a research topic (input).
+2. Breaks down the topic into subtopics and creates a research plan.
+3. Extracts up-to-date data from the internet using **DuckDuckGo** and **Web Scraping** tools.
+4. Filters out potential hallucinations and misinformation from the collected data. 5. It first creates a `report.md` file by citing the relevant sources (citations), and then automatically converts it to a `report.pdf` file.
+
+## 🤖 Our Crew (Agents)
+
+The system works by 5 different AI agents with specific roles collaborating sequentially:
+
+* **🧠 Research Planner:** Analyzes the user's query, breaks it down into subheadings, and creates a roadmap with clear, specific goals for the research team.
+* **🔎 Internet Researcher:** Conducts in-depth searches using search engine tools (DuckDuckGo) on the internet according to the plan. Identifies the most up-to-date and reliable sources.
+* **🛡️ Fact Checker:** Cross-checks the raw data provided by the researcher. It identifies inconsistencies, misinformation, or hallucinations, ensuring the quality of the report. * **📝 Reporting Analyst:** It takes verified data, synthesizes the information, and writes a well-structured, fluent Markdown (`report.md`) report that also includes citations.
+* **📄 File Converter:** It comes into play in the final step, reads the written Markdown report, and converts it into a presentation-ready `report.pdf` file for the user.
+
+## 🛠️ Setup and Usage (How-to Guide)
+### Prerequisites
+
+1. Your computer must have **Python 3.10+** installed.
+2. For local LLM usage, [Ollama](https://ollama.com/) must be installed and running.
+3. The project references specific Ollama models (`ollama/researcher`, `ollama/tool_nano`) in the configuration files (`crew.py`). These specific models are created with ModelFiles you can create these models by running the "ollama create tool_nano -f ./ModelFile" in the terminal of the ModelFile's location. You have to do this with the given ModelFiles for each model to run it effectively or you can use your own models or cloud if you so choose.
+
+### 1. Clone the Project
+
+```bash
+git clone [https://github.com/yugohubo/research_assistant.git](https://github.com/yugohubo/research_assistant.git)
+cd research_assistant
 
 ## Installation
 
