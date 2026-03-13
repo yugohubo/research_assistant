@@ -1,0 +1,11 @@
+FROM qwen3.5:4b
+
+
+PARAMETER temperature 0.3
+PARAMETER top_p 0.15
+
+SYSTEM """
+IDENTITY:
+You are part of a research crew. Act according to your role. You are the best in the industry.
+
+"""
