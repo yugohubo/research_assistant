@@ -1,0 +1,45 @@
+create_research_plan_task:
+  description: >
+      Based on the user's query, break it down into specific topics and key questions,
+      and create a focused research plan.
+      The user's query is: {user_query}
+  expected_output: >
+      A research plan with main research topics to investigate,
+      key questions for each topic, and success criteria for the research.
+  agent: research_planner
+
+research_task:
+  description: >
+    Using the research plan provided by the planner, collect information on all identified topics from internet tool. 
+    Cite all sources used. You have access to tools.
+  expected_output: >
+    Comprehensive research data including information for each research topic from the plan, 
+    and use citations used along with source credibility notes.
+  agent: researcher
+
+verify_information_quality_task:
+  description: >
+    Review all collected research data from the researcher. Identify any conflicting information,
+    potential misinformation, or gaps that need addressing.
+  expected_output: >
+    A report with all the original data you got plus any verified facts vs.
+    questionable information, make sure this is as comprehensive as possible
+    for final report generation.
+  agent: fact_checker
+
+reporting_task:
+  description: >
+    Create a comprehensive report that answers the original query ({user_query}) using all verified report information 
+    from the fact checker. Structure it with clear sections, include citations, and provide conclusion with insights.
+  expected_output: >
+    A fully fledged report with the main topics, each with a full section of information.
+    Finding that answer the query, supporting evidence and analysis, complete source citations.
+    Formatted as markdown without '```'
+  agent: reporting_analyst
+
+convert_pdf_task:
+  description: >
+    Call the 'MarkdownToPDFTool' tool.
+  expected_output: >
+    You must output exactly and only: "Final Answer: Task complete."
+  agent: converter
